@@ -1,0 +1,41 @@
+<%- include('../partials/header.ejs')%>
+
+<body id="newtrade-page">
+    <%- include('../partials/navbar.ejs')%>
+
+    <div class="container-fluid main-container">
+        <div class="mission-container">
+            <img src="/assets/logo.png" alt="GAME HAWK" id="home-branding">
+            <p id="mission">
+                Every gamer's hunt ends here
+            </p>
+        </div>
+        <form id="new-trade" class="card bg-dark" action = '/trades' method = 'POST'>
+            <h5 class="form-title">List your game to trade</h5>
+            <div class="input-group">
+                <span class="input-group-text">Game Title</span>
+                <input type="text" name="title" aria-label="Enter title of the game" class="form-control" >
+            </div>
+            <div class="input-group">
+                <span class="input-group-text">Description</span>
+                <textarea class="form-control" rows="5" name="description" aria-label="Description" ></textarea>
+            </div>
+            <div class="input-group">
+                <label class="input-group-text" for="platform">Platform</label>
+                <input type="text" name="platform" aria-label="Enter Platform of the game" class="form-control" id="platform" >
+            </div>
+            <div class="input-group">
+                <label class="input-group-text" for="genre">Genre</label>
+                <input type="text" name="genre" aria-label="Enter Platform of the game" class="form-control" id="genre" > 
+            </div>
+            <div class="input-group">
+                <label class="input-group-text" for="release-year">Release Year</label>
+                <input type="text" name="release" aria-label="Enter Platform of the game" class="form-control" id="release-year" >
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+
+<%- include('../partials/footer.ejs')%>

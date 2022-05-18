@@ -1,0 +1,334 @@
+body {
+    background: url(../assets/main-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar {
+    padding: 8px 15px;
+    box-shadow: 0px 15px 10px -15px #111;
+}
+
+.navbar-brand img {
+    width: 150px;
+    height: 100%;
+    vertical-align: unset;
+}
+
+.navbar #auth-links a {
+    margin-right: 10px;
+}
+
+.mission-container {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.explore-btn {
+    color: #fff;
+    background-color: #49bc6e;
+    border-color: #49bc6e;
+}
+
+.mission-container p {
+    font-size: 26px;
+    color: white;
+    padding-top: 20px;
+}
+
+#home-branding {
+    height: 100%;
+    width: 700px;
+}
+
+.navbar a {
+    color: #ffe02b;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#home-porfolio {
+    margin: 55px 0;
+}
+
+#home-porfolio .card {
+    box-shadow: 0px 15px 10px -15px #111;
+}
+
+#home-porfolio .card-title {
+    margin: auto;
+    text-align: center;
+    color: #ffe02b;
+}
+
+#games-listing .card {
+    margin-top: 20px;
+    box-shadow: 0px 15px 10px -15px #111;
+}
+
+#games-listing .card-title {
+    margin: auto;
+    color: #ffe02b;
+}
+
+#games-listing .card-text {
+    margin: auto;
+    color: white;
+    margin-top: 10px;
+    text-align: justify;
+}
+
+#games-listing .card-footer {
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.trade-btn {
+    color: #fff;
+    background-color: #49bc6e;
+    border-color: #49bc6e;
+}
+
+.like-btn {
+    color: #fff;
+    background-color: #ff2945;
+    border-color: #ff2945;
+}
+
+#home-porfolio btn {
+    margin: 0 10px;
+}
+
+#trade-page h5 {
+    color: white;
+}
+
+#games-listing {
+    margin: 30px 0;
+}
+
+#games-filter {
+    margin: 50px 0;
+}
+
+#games-filter .accordion-header {
+    margin-top: 20px;
+}
+
+#games-filter .accordion-item {
+    box-shadow: 0px 15px 10px -15px #111;
+}
+
+#game-banner {
+    margin: 50px auto 15px 30px;
+    box-shadow: 0px 15px 10px -15px #111;
+}
+
+#game-banner img {
+    max-width: 330px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#game-specs {
+    margin: 50px auto 15px auto;
+    height: 100%;
+    max-height: 420px;
+    box-shadow: 0px 15px 10px -15px #111;
+}
+
+#game-specs .card-title,
+#game-desc .card-title {
+    color: #ffe02b;
+}
+
+#game-specs ul li {
+    color: white;
+}
+
+#game-specs .listed-by {
+    color: #49bc6e;
+}
+
+#game-desc {
+    margin: 15px auto 50px 30px;
+    box-shadow: 0px 15px 10px -15px #111;
+    min-height: 280px;
+}
+
+#game-desc p {
+    color: white;
+}
+
+#trade-card {
+    margin: 50px 30px 50px auto;
+    box-shadow: 0px 15px 10px -15px #111;
+}
+
+.edit-card{
+    margin-top: 545px !important;
+    height: 70px;
+}
+
+#trade-card p {
+    text-align: center;
+    color: white;
+}
+
+#trade-card .trade-links {
+    text-align: center;
+}
+
+#newtrade-page {
+    min-height: 960px;
+}
+
+#new-trade {
+    max-width: 700px;
+    position: relative;
+    margin: 50px auto 50px auto;
+    padding: 15px;
+}
+
+#new-trade .input-group {
+    margin-bottom: 20px;
+}
+
+.form-title {
+    text-align: center;
+    color: #ffe02b;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.footer {
+    position: relative;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    box-shadow: 0px -15px 10px -15px #111;
+}
+
+#newtrade-page .footer {
+    bottom: -10px;
+}
+
+.footer .footer-content {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+    padding-right: var(--bs-gutter-x, .75rem);
+    padding-left: var(--bs-gutter-x, .75rem);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.footer .footer-links a {
+    color: #6c757d;
+    text-decoration: none;
+}
+
+.footer-links,
+.social-links {
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.footer-links a,
+.social-links a {
+    margin: 0 7px;
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+}
+
+.main-pages #main-title{
+    color: white;
+    margin: 50px auto 20px auto;
+}
+
+.profile-page #main-title{
+    color: white;
+    margin: 50px auto 20px auto;
+}
+
+#about-page .main-content {
+    max-width: 800px;
+    margin: 10px auto;
+    text-align: justify;
+    font-size: 18px;
+}
+
+#contact-page .main-content {
+    max-width: 800px;
+    margin: 10px auto;
+    font-size: 18px;
+}
+
+.main-pages {
+    min-height: 510px;
+}
+
+.error-message {
+    color: white;
+    margin: 50px auto;
+    text-align: center;
+    min-height: 525px;
+}
+
+.category-header {
+    color: white;
+    margin-top: 20px;
+}
+
+.toast-container {
+    position: absolute;
+    z-index: 50;
+    margin-top: 75px;
+}
+
+.profile-watchlist .card-text {
+    margin-bottom: 10px !important;
+}
+
+.trade-card-btn {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.profile-offers-received .trade-links button.btn, .profile-watchlist .trade-links button.btn{
+    width: 100%;
+    margin: 5px;
+}
+
+.profile-offers-given .trade-links button.btn {
+    width: 50%;
+    margin: 5px;
+}
+
+.profile-offers-received .card-title, .profile-offers-given .card-title, .profile-archive .card-title{
+    margin-top: 7px !important;
+}
+
+#profile-page .error-message {
+    min-height: auto;
+}
+
+#profile-page .nav-tabs {
+    margin-top: 50px;
+}
+
+#profile-page .nav-tabs .nav-link {
+    color: #49bc6e;
+    width: 20%;
+}
+
+#profile-page .nav-tabs .nav-link.active {
+    color: white!important;
+    background: #49bc6e;
+}

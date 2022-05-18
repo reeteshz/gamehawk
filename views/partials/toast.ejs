@@ -1,0 +1,24 @@
+<div class="toasts row float-end">
+  <% if(errorMessages.length > 0) {%>
+      <% errorMessages.forEach(message=>{%>
+          <div class="toast-container top-20 end-0 toast show align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-animation="true" data-bs-autohide="true">
+              <div class="d-flex">
+                <div class="toast-body">
+                  <%=message%>
+                </div>
+              </div>
+            </div>
+      <%});%>
+  <%}%>
+  <% if(successMessages.length > 0) {%>
+      <% successMessages.forEach(message=>{%>
+          <div class="toast-container top-20 end-0 toast show align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-animation="true">
+              <div class="d-flex">
+                <div class="toast-body">
+                  <%=message%>
+                </div>
+              </div>
+            </div>
+      <%});%>
+  <%}%>
+</div>

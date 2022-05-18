@@ -1,0 +1,22 @@
+<svg id="Type_2" data-name="Type 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="742" height="136" viewBox="0 0 742 136">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 150px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #1572a1;
+        font-family: "Bauhaus 93";
+      }
+
+      .cls-2 {
+        font-size: 62.5px;
+      }
+    </style>
+  </defs>
+  <text id="Medi" class="cls-1" x="-7" y="135">Medi</text>
+  <text id="Trade" class="cls-1" x="328.001" y="130">Trade</text>
+  <image id="pink_heart" data-name="pink+heart" x="675" width="67" height="61" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEMAAAA9CAYAAAD24tTCAAADqUlEQVR4nO3aSewkUxzA8c+/M8zBnhjbYYjlwpiJBCPCSETELrFEBJGZcRDEOMgk4+BiOTg44CJCiJMLYut/IsaWCEKEcHGxhiGZxBKCEPLa+1MpXd1V3a+qurt8L53u193v9bff+/3q914tfbHzDROwFqfhVKzDodgfq/A7fsDX+Aihg9fw2SQdYQknYBM24igcjL1i2y/Yjc/xHl7Hm3EM1TqqICN0fC6uw1nYp0I/P+JlPIpn8EeJz6zBNbgqyliq0F8Q/zQewQdlP1RWRvjxt+P0CgMq4i3cgecL2lfjZtyCw6bs6zc8jjvx6bg398a074378WIiEeJUfw4P44Bc28lxmt+TQERgT2yNf8DmcW8eJeNovISbEgxqGFvwCo6NbddiJ06qoa+D4pJ5IMa1oRQ1rIv/3uE1DCzLerwQ1/e2mvsK3IhDYhz6Nd84TMaRcT2vbWBwovAmRKxwacx4V+LPbEN+mYR09USDItriCtyV7zsvIwSuExdaw7/swDnZF7IyzsANLQ2sLe6LGXNAL/N4d6c0/M0x2QmwIuPseGndRULw3i8r4/qOihAv7i4WZYQnZ7Y/plYJaXYgY1PFomsROSUUhr1YinedsP2wIcg4rusmIsf3ElWHi8ARQca+XbcQOTDI2GMmhtI+q3uxgus8oaQPMr7/38SA3b24i915wh5pL27ndx582IvnGl0nhIr3g4xX8VPHbYTd82+CjC/jAU+XCVud/5TwD3ZYxC48KSOjj7fbHVNrhLOU72RkhLPP27rnwSdRxoDshnA4PXuonTG1xrbsRWf+qODWKqfWc869eDb7E/Iywj0Nl+OrBRfxFLbnXxx28PwxLsK3zYyrcZZx9bB7RIpO4d/FeeFCZLE8DERchp+HNY66JSEIuWCBhKyIKLzaHnezyjsLImSsCCVkWAAhpUQoKcMcCyktQgUZMkLmJcssxxtTSlfkVWSIQs6fgxkyMmsUUVWGOVgylZZGlklkmGEhE4swhQwzKGQqEaaUYYaETC1CAhlmIMv0q2aNIlLI0GKWWY5VdqWsUUQqGVoQ0k+xNLKklKHB4m5lRiQ94kgtQyaG7Krhu6UKlsOoQ4Yo5MIaZkhtItQoQw1pN3mMyFOnDAmDau0iNCBDDKrTCOmnTJ+jaEKGKbJMv46sUURTMkyQZWpJn6NoUoYKWabWrFFE0zKUyDLJao2qtCHDiCzTn2SHKhVtyTAkyzSWNYpoU0YgCLkEjzUdLP8D/gJnCtO74b11HAAAAABJRU5ErkJggg=="/>
+  <text id="plus" class="cls-2" x="685.001" y="50">+</text>
+</svg>

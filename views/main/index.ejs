@@ -1,0 +1,60 @@
+<%- include('../partials/header.ejs')%>
+<body id="landing-page">
+    <%- include('../partials/navbar.ejs')%>
+    <div class="container-fluid main-container">
+        <div class="mission-container">
+            <img src="/assets/logo.png" alt="GAME HAWK" id="home-branding">
+            <p id="mission">
+                Every gamer's hunt ends here
+            </p>
+            <a href="/trades/new" class="btn btn-md explore-btn">Start Trading</a>
+        </div>
+        <div class="row" id="home-porfolio">
+            <div class="col-sm-3">
+                <div class="card bg-dark">
+                    <img class="card-img-top" src="/assets/portfolio/ps5-games.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <div class="row">
+                            <p class="card-title col-sm-6 ">PlayStaion Games</p>
+                            <a href="/trades" class="btn col-sm-6 explore-btn">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card bg-dark">
+                    <img class="card-img-top" src="/assets/portfolio/xbox-games.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <div class="row">
+                            <p class="card-title col-sm-6">Xbox Games</p>
+                            <a href="/trades" class="btn col-sm-6 explore-btn">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card bg-dark">
+                    <img class="card-img-top" src="/assets/portfolio/computer-games.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <div class="row">
+                            <p class="card-title col-sm-6">PC Games</p>
+                            <a href="/trades" class="btn col-sm-6 explore-btn">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card bg-dark">
+                    <img class="card-img-top" src="/assets/portfolio/board-games.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <div class="row">
+                            <p class="card-title col-sm-6">Board Games</p>
+                            <a href="/trades" class="btn col-sm-6 explore-btn">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<%- include('../partials/footer.ejs')%>

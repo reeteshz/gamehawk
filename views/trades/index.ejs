@@ -1,0 +1,51 @@
+<%- include('../partials/header.ejs')%>
+
+<body id="explore-page">
+    <%- include('../partials/navbar.ejs')%>
+
+    <div class="container-fluid main-container">
+        <div class="row" id="games-listing">
+            <% platforms.forEach(function(platform) { %>
+                <h2 class="category-header"> <%= platform %> Games</h2>
+                <% if( trades.length ) {%>
+                    <% trades.filter(trade => trade.platform == platform).forEach(function(trade) { %>
+                        <div class="col-sm-3">
+                            <div class="card bg-dark">
+                                <img class="card-img-top" src="/assets/games/far-cry-6-ps5.jpeg" alt="Card image cap">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <p class="card-title col-sm-12"><%= trade.title %></p>
+                                        </div>
+                                        <div>
+                                            <% if( trade.available === 0 ) {%>
+                                                <span class="badge bg-success">Available</span>
+                                            <% } else if( trade.available === 1 ) {%>
+                                                <span class="badge bg-warning">Pending</span>
+                                            <% } else { %>
+                                                <span class="badge bg-secondary">Traded</span>
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                    <p class="card-text text-justify text-align-center"><%= trade.description %></p>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <a href="/trades/<%= trade.id %>" class="btn btn-md trade-card-btn trade-btn stretched-link">Explore</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <span class="text-muted">Platform: <%= trade.platform %></span>
+                                    <span class="text-muted">Posted <%= trade.postedAt %></span>
+                                </div>
+                            </div>
+                        </div>
+                        <% }); %>
+                    <% } else { %>
+                        <h2 class="error-message"> Currently, there are no trades available. </h2>
+                    <% } %>
+            <% }); %>
+        </div>
+    </div>
+
+<%- include('../partials/footer.ejs')%>

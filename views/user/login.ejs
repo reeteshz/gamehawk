@@ -1,0 +1,29 @@
+<%- include('../partials/header.ejs')%>
+
+<body>
+    <%- include('../partials/navbar.ejs')%>
+
+    <div class="container-fluid main-container">
+        <div class="mission-container">
+            <img src="/assets/logo.png" alt="GAME HAWK" id="home-branding">
+            <p id="mission">
+                Every gamer's hunt ends here
+            </p>
+        </div>
+        <form id="new-trade" class="card bg-dark" action = '/user/login' method = 'POST'>
+            <h5 class="form-title">Login</h5>
+            <div class="input-group">
+                <span class="input-group-text">Email ID</span>
+                <input type="text" name="email" aria-label="Enter your email id" class="form-control" required>
+            </div>
+            <div class="input-group">
+                <span class="input-group-text">Password</span>
+                <input type="password" name="password" aria-label="Enter your password" class="form-control" required>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+        </form>
+    </div>
+
+<%- include('../partials/footer.ejs')%>

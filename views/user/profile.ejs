@@ -1,0 +1,214 @@
+<%- include('../partials/header.ejs')%>
+<body id="contact-page">
+    <%- include('../partials/navbar.ejs')%>
+    <div class="container-fluid main-container" id="profile-page">
+        <div class="mission-container profile-page">
+            <img src="/assets/logo.png" alt="GAME HAWK" id="home-branding">
+            <div id="main-title">
+                <h1>Welcome, <%= user.firstName %> <%= user.lastName %></h1>
+            </div>
+        </div>
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <button class="nav-link active" id="nav-trades-tab" data-bs-toggle="tab" data-bs-target="#nav-trades" type="button" role="tab" aria-controls="nav-home" aria-selected="true">My  Listed Trades</button>
+              <button class="nav-link" id="nav-onwatch-tab" data-bs-toggle="tab" data-bs-target="#nav-onwatch" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Watchlist</button>
+              <button class="nav-link" id="nav-offers-received-tab" data-bs-toggle="tab" data-bs-target="#nav-offers-received" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Offers Received</button>
+              <button class="nav-link" id="nav-offers-made-tab" data-bs-toggle="tab" data-bs-target="#nav-offers-made" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Offers Made</button>
+              <button class="nav-link" id="nav-archive-tab" data-bs-toggle="tab" data-bs-target="#nav-archive" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Archive</button>
+            </div>
+          </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-trades" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="row profile-owntrades" id="games-listing">
+                        <% if( trades.length ) {%>
+                            <% trades.forEach(function(trade) { %>
+                                <div class="col-sm-3">
+                                    <div class="card bg-dark">
+                                        <img class="card-img-top" src="/assets/games/far-cry-6-ps5.jpeg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between">
+                                                <div>
+                                                    <p class="card-title col-sm-12"><%= trade.title %></p>
+                                                </div>
+                                                <div>
+                                                    <% if( trade.available === 0 ) {%>
+                                                        <span class="badge bg-success">Available</span>
+                                                    <% } else if( trade.available === 1 ) {%>
+                                                        <span class="badge bg-warning">Pending</span>
+                                                    <% } else { %>
+                                                        <span class="badge bg-secondary">Traded</span>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                            <p class="card-text text-justify text-align-center"><%= trade.description %></p>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <a href="/trades/<%= trade.id %>" class="btn btn-md trade-card-btn trade-btn stretched-link">
+                                                        Explore
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <span class="text-muted">Platform: <%= trade.platform %></span>
+                                            <span class="text-muted">Posted <%= trade.postedAt %></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            <% }); %>
+                        <% } else { %>
+                            <h2 class="error-message"> Currently, there are no trades available. </h2>
+                        <% } %>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-onwatch" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <div class="row profile-watchlist" id="games-listing">
+                        <% if( watchlist.length ) {%>
+                            <% watchlist.forEach(function(item) { %>
+                                <div class="col-sm-3">
+                                    <div class="card bg-dark">
+                                        <img class="card-img-top" src="/assets/games/far-cry-6-ps5.jpeg" alt="Card image cap">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-sm-9">
+                                                    <p class="card-title col-sm-12"><%= item.title %></p>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <% if( item.available === 0 ) {%>
+                                                        <span class="badge bg-success">Available</span>
+                                                    <% } else if( item.available === 1 ) {%>
+                                                        <span class="badge bg-warning">Pending</span>
+                                                    <% } else { %>
+                                                        <span class="badge bg-secondary">Traded</span>
+                                                    <% } %>
+                                                </div>
+                                            </div>
+                                            <p class="card-text text-justify text-align-center"><%= item.description %></p>
+                                            <div class="col-sm-12">
+                                                <div class="trade-links">
+                                                    <form class="d-flex justify-content-around">
+                                                        <button type="submit" class="btn btn-md trade-btn" formmethod="GET" formaction="/trades/<%= item.id %>/offer">Trade</button>
+                                                        <button type="submit" class="btn btn-md like-btn" formmethod="POST" formaction="/user/<%= item.id %>/unwatch">Unwatch</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <span class="text-muted">Platform: <%= item.platform %></span>
+                                            <span class="text-muted">Posted <%= item.postedAt %></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            <% }); %>
+                        <% } else { %>
+                            <h2 class="error-message"> Currently, no items are in your watchlist. </h2>
+                        <% } %>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-offers-received" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <div class="row profile-offers-received" id="games-listing">
+                    <% if( offersReceived.length ) {%>
+                        <% offersReceived.forEach(function(item) { %>
+                            <div class="col-sm-4">
+                                <div class="card bg-dark">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <h5 class="text-white">You</h5>
+                                                <img class="card-img-top" src="/assets/games/far-cry-6-ps5.jpeg" alt="Card image cap">
+                                                <p class="card-title col-sm-12"><%= item.trade.title %></p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <h5 class="text-white"><%= item.offerBy.firstName%> <%= item.offerBy.lastName %></h5>
+                                                <img class="card-img-top" src="/assets/games/far-cry-6-ps5.jpeg" alt="Card image cap">
+                                                <p class="card-title col-sm-12"><%= item.offer.title %></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="col-sm-12">
+                                            <div class="trade-links">
+                                                <form class="d-flex justify-content-around">
+                                                    <button type="submit" class="btn btn-md trade-btn" formmethod="POST" formaction="/trades/<%= item.id %>/accept">Accept</button>
+                                                    <button type="submit" class="btn btn-md like-btn" formmethod="POST" formaction="/trades/<%= item.id %>/cancel">Decline</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }); %>
+                    <% } else { %>
+                        <h2 class="error-message"> Currently, you have no offers. </h2>
+                    <% } %>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-offers-made" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <div class="row profile-offers-given" id="games-listing">
+                        <% if( OffersGiven.length ) {%>
+                            <% OffersGiven.forEach(function(item) { %>
+                                <div class="col-sm-4">
+                                    <div class="card bg-dark">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <h5 class="text-white"><%= item.tradeOwner.firstName%> <%= item.tradeOwner.lastName %></h5>
+                                                    <img class="card-img-top" src="/assets/games/far-cry-6-ps5.jpeg" alt="Card image cap">
+                                                    <p class="card-title col-sm-12"><%= item.trade.title %></p>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <h5 class="text-white">You</h5>
+                                                    <img class="card-img-top" src="/assets/games/far-cry-6-ps5.jpeg" alt="Card image cap">
+                                                    <p class="card-title col-sm-12"><%= item.offer.title %></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="col-sm-12">
+                                                <div class="trade-links">
+                                                    <form class="d-flex justify-content-around">
+                                                        <button type="submit" class="btn btn-md trade-btn" formmethod="POST" formaction="/trades/<%= item.id %>/cancel">Cancel</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <% }); %>
+                        <% } else { %>
+                            <h2 class="error-message"> You have made any offer yet. </h2>
+                        <% } %>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-archive" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <div class="row profile-archive" id="games-listing">
+                    <% if( archive.length ) {%>
+                        <% archive.forEach(function(item) { %>
+                            <div class="col-sm-4">
+                                <div class="card bg-dark">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <h5 class="text-white">You</h5>
+                                                <img class="card-img-top" src="/assets/games/far-cry-6-ps5.jpeg" alt="Card image cap">
+                                                <p class="card-title col-sm-12"><%= item.trade.title %></p>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <h5 class="text-white"><%= item.offerBy.firstName%> <%= item.offerBy.lastName %></h5>
+                                                <img class="card-img-top" src="/assets/games/far-cry-6-ps5.jpeg" alt="Card image cap">
+                                                <p class="card-title col-sm-12"><%= item.offer.title %></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }); %>
+                    <% } else { %>
+                        <h2 class="error-message"> There are no past trades </h2>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<%- include('../partials/footer.ejs')%>

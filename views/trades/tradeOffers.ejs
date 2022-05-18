@@ -1,0 +1,42 @@
+<%- include('../partials/header.ejs')%>
+<body id="contact-page">
+    <%- include('../partials/navbar.ejs')%>
+    <div class="container-fluid main-container">
+        <div class="row profile-owntrades" id="games-listing">
+            <h3 class="text-white">Games you can offer to trade</h3>
+                <% if( trades.length ) {%>
+                    <% trades.forEach(function(trade) { %>
+                        <div class="col-sm-3">
+                            <div class="card bg-dark">
+                                <img class="card-img-top" src="/assets/games/far-cry-6-ps5.jpeg" alt="Card image cap">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <p class="card-title col-sm-12"><%= trade.title %></p>
+                                    </div>
+                                    <p class="card-text text-justify text-align-center"><%= trade.description %></p>
+                                    <div class="col-sm-12">
+                                        <div class="trade-links">
+                                            <form class="card bg-dark" action = '/trades/makeoffer' method = 'POST'>
+                                                <input type="hidden" name="trade" class="form-control" value="<%= tradeID %>">
+                                                <input type="hidden" name="tradeOwner" class="form-control" value="<%= tradeOwner %>">
+                                                <input type="hidden" name="offer"  class="form-control" value="<%= trade.id %>">
+                                                <input type="hidden" name="offerBy" class="form-control" value="<%= offerBy %>">
+                                                <button type="submit" class="btn btn-md trade-btn">Trade</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <span class="text-muted">Platform: <%= trade.platform %></span>
+                                    <span class="text-muted">Posted <%= trade.postedAt %></span>
+                                </div>
+                            </div>
+                        </div>
+                    <% }); %>
+                <% } else { %>
+                    <h2 class="error-message"> Currently, there are no trades available. </h2>
+                <% } %>
+        </div>
+    </div>
+
+<%- include('../partials/footer.ejs')%></body>

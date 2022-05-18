@@ -1,0 +1,22 @@
+<% if(trade) { %>
+    <div class="col-sm-4">
+        <div class="card bg-dark">
+            <img class="card-img-top" src="/assets/games/far-cry-6-ps5.jpeg" alt="Card image cap">
+            <div class="card-body">
+                <div class="row">
+                    <p class="card-title col-sm-9"><%= trade.title %></p>
+                    <div class="col-sm-3">
+                        <a href="/trades/<%= trade.id %>" class="btn btn-sm trade-btn stretched-link">Trade</a>
+                    </div>
+                </div>
+                <p class="card-text text-justify text-align-center"><%= trade.description %></p>
+            </div>
+            <div class="card-footer row">
+                <span class="text-muted col-sm-4">Platform: <%= trade.platform %></span>
+                <span class="text-muted col-sm-8">Posted <%= trade.createdAt %></span>
+            </div>
+        </div>
+    </div>
+<% } else { <%
+    <h1> Trade info is not available </h1>
+<% } %>

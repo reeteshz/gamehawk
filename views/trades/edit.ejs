@@ -1,0 +1,41 @@
+<%- include('../partials/header.ejs')%>
+
+<body id="newtrade-page">
+    <%- include('../partials/navbar.ejs')%>
+
+    <div class="container-fluid main-container">
+        <div class="mission-container">
+            <img src="/assets/logo.png" alt="GAME HAWK" id="home-branding">
+            <p id="mission">
+                Every gamer's hunt ends here
+            </p>
+        </div>
+        <form id="new-trade" class="card bg-dark" method="POST" action="/trades/<%= trade.id %>?_method=PUT">
+            <h5 class="form-title">Update your trade</h5>
+            <div class="input-group">
+                <span class="input-group-text">Game Title</span>
+                <input type="text" name="title" aria-label="Enter title of the game" class="form-control" value="<%= trade.title %>" required>
+            </div>
+            <div class="input-group">
+                <span class="input-group-text">Description</span>
+                <textarea class="form-control" rows="5" name="description" aria-label="Description" required minlength="20"><%= trade.description %></textarea>
+            </div>
+            <div class="input-group">
+                <label class="input-group-text" for="platform">Platform</label>
+                <input type="text" name="platform" aria-label="Enter Platform of the game" class="form-control" id="platform" value="<%= trade.platform %>" required>
+            </div>
+            <div class="input-group">
+                <label class="input-group-text" for="genre">Genre</label>
+                <input type="text" name="genre" aria-label="Enter Platform of the game" class="form-control" id="genre" value="<%= trade.genre %>" required>
+            </div>
+            <div class="input-group">
+                <label class="input-group-text" for="release-year">Release Year</label>
+                <input type="text" name="release" aria-label="Enter Platform of the game" class="form-control" id="release-year" value="<%= trade.release %>" required>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+        </form>
+    </div>
+
+<%- include('../partials/footer.ejs')%>
